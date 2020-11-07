@@ -1,0 +1,11 @@
+extends layout
+
+block content
+  h1=voter.name
+  h5=voter.donevote 
+  hr
+  if user  
+    a.btn.btn-primary(href='/voters/edit/'+voter.id) Edit voter
+    a.btn.btn-danger.delete-voter(href='#',data-id=voter._id ) Delete this voter
+
+  

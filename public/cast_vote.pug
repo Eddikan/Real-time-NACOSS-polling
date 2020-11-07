@@ -1,0 +1,43 @@
+extends layout
+
+block content
+  doctype html
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(http-equiv='X-UA-Compatible', content='ie=edge')
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css')
+    title NacossVoter
+    style.
+      .hidden { display: none; }
+  .container
+    h1 NACOSS&apos; Voter
+    p Vote for your new Nacoss President
+    #hasVotedAlreadyErrorMsg.card-panel.hidden(style='width: 30%')
+      span.red-text.text-darken-2 You have already voted, you can only vote once.
+    form#vote-form
+      p
+        input#a(type='radio', name='os', value='a')
+        label(for='a') Mr A
+      p
+        input#macos(type='radio', name='os', value='MacOS')
+        label(for='macos') Mr B
+      p
+        input#linux(type='radio', name='os', value='Linux')
+        label(for='linux') Mr C
+      p
+        input#other(type='radio', name='os', value='Other')
+        label(for='other') Mr D
+      input.btn(type='submit', value='Vote')
+    br
+    br
+    h5#chartTitle(style='text-align: center')
+    #chartContainer(style='height: 300px;width:100%')
+    footer
+      p To God Be The Glory
+      p copyright &copy; 2019 
+  script(src='http://code.jquery.com/jquery-3.3.1.js', integrity='sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=', crossorigin='anonymous')
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js')
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/pusher/4.2.2/pusher.min.js')
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/canvasjs/1.7.0/canvasjs.min.js')
+  script(src='/js/maini.js')

@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  h1 Login
+  form(method='POST', action='/voters/login')
+    #form-group
+      label Matric Number:
+      input.form-control(name='matno', type='text')              
+      #form-group
+      label Password:
+      input.form-control(name='pass', type='password')     
+    br
+    input.btn.btn-primary(type='submit',value='LOG IN')
+    h6 Don't have an account?  
+      a(href='/voters/signup') Sign Up  

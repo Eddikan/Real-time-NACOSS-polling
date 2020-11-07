@@ -1,0 +1,76 @@
+//- extends layout
+
+//- block content
+//-   h1 Voter Sign Up
+//-   h6 Enter your details below 
+//-   form(method='POST', action='/voters/signup')
+//-     #form-group
+//-       label Matric Number:
+//-       input.form-control(name='matno', type='text')              
+//-     #form-group
+//-       label Password:
+//-       input.form-control(name='pass', type='password')  
+//-     #form-group
+//-       label Confirm password:
+//-       input.form-control(name='pass2', type='password')   
+//-     br
+//-     input.btn.btn-primary(type='submit',value='SIGN UP')
+//-   h6 Already have an account?  
+//-     a(href='/voters/login') Login   
+      
+
+
+
+
+extends layout
+
+block content
+  
+  .h-100.d-flex.bg-white.justify-content-center.align-items-center.col-md-12.col-lg-8
+      .mx-auto.app-login-box.col-sm-12.col-md-10.col-lg-9
+        img(src='unilogo.jpg', alt='')
+        h1 Voter Signup
+        .divider.row
+        .justify-content-center.align-items-center
+          .mx-auto.app-login-box.col-md-12
+            .modal-dialog.w-100.mx-auto
+              .modal-content
+                .modal-body
+                  .h5.modal-title.text-center
+                  h2 Enter your details below
+                    h4.mt-2
+                      span
+                        h1 #{title}
+                        form(method='POST', action='/voters/signup')
+                          #form-group
+                            label MatNo:
+                            input.form-control(name='matno', type='text', placeholder='Student matric number')
+                          //- #form-group
+                          //-   label Name:
+                          //-   input.form-control(name='name', type='text') 
+                          //.form-row
+                            .col-md-12
+                              .position-relative.form-group
+                                input#username.form-control(name='username', required='', placeholder='Your matric number', type='text')
+                            .col-md-12
+                              .position-relative.form-group
+                                input#password.form-control(name='password', required='', placeholder='Password here...', type='password', onkeydown="if (event.keyCode == 13) swapcontent22('main_login',$('#username').val(),$('#password').val());")        
+                          #form-group
+                            label Password:
+                            input.form-control(name='pass', type='password') 
+                          .divider.row
+                          #form-group
+                            label Confirm:
+                            input.form-control(name='pass2',type='password')
+                          //- #form-group
+                          //-   select(name='donevote')
+                          //-     option(value='not voted') Not voted
+                          //-       |     
+                          //-     option(value='has voted') Has voted
+                          //-       |                     
+                          br
+                          .modal-footer.clearfix
+                          input.btn.btn-primary(type='submit',value='SIGN UP')
+                        h6 Already have an account?  
+                          a(href='/voters/login') Login
+                            .divider.row  

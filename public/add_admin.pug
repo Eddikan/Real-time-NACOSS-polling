@@ -1,0 +1,59 @@
+extends layout
+
+block content
+  .h-100.d-flex.bg-white.justify-content-center.align-items-center.col-md-12.col-lg-8
+      .mx-auto.app-login-box.col-sm-12.col-md-10.col-lg-9
+        img(src='unilogo.jpg', alt='')
+        h1 Voter Signup
+        .divider.row
+        .justify-content-center.align-items-center
+          .mx-auto.app-login-box.col-md-12
+            .modal-dialog.w-100.mx-auto
+              .modal-content
+                .modal-body
+                  .h5.modal-title.text-center
+                    h1 #{title}
+                    form(method='POST', action='/admins/add')
+                      #form-group
+                        label Name:
+                        input.form-control(name='name', type='text')
+                      #form-group
+                        label Email:
+                        input.form-control(name='email', type='text')      
+                      #form-group
+                        label Username:
+                        input.form-control(name='username', type='text')     
+                      #form-group
+                        label Password:
+                        input.form-control(name='password', type='password')    
+                      #form-group
+                        label Confirm pasword:
+                        input.form-control(name='password2',type='password')
+                      
+                      br
+                      input.btn.btn-primary(type='submit',value='Submit')
+      
+
+
+  //- #login.auth-form.px-3
+  //-   // '"`
+  //-   // </textarea></xmp>
+  //-   form(action='/session', accept-charset='UTF-8', method='post')
+  //-     input(name='utf8', type='hidden', value='✓')
+  //-     input(type='hidden', name='authenticity_token', value='CutkJbAOipwTY1VB8YRDrTpCdgC8lvaYnc2RwGynDRLVz5CXSjjbPrfupj613vGVAb9xvjyg5f1jocLJZn+XQA==')
+  //-     input.js-octo-ga-id-input(type='hidden', name='ga_id')
+  //-     .auth-form-header.p-0
+  //-       h1 Sign in to GitHub
+  //-     #js-flash-container
+  //-     .auth-form-body.mt-3
+  //-       label(for='login_field')
+  //-       input#login_field.form-control.input-block(type='text', name='login', tabindex='1', autocapitalize='off', autocorrect='off', autofocus='autofocus')
+  //-       label(for='password')
+  //-         a.label-link(href='/password_reset') Forgot password?
+  //-       input#password.form-control.form-control.input-block(type='password', name='password', tabindex='2')
+  //-       input.js-webauthn-support(type='hidden', name='webauthn-support', value='unknown')
+  //-       input.js-webauthn-iuvpaa-support(type='hidden', name='webauthn-iuvpaa-support', value='unknown')
+  //-       input.form-control(type='text', name='required_field_f546', hidden='hidden')
+  //-       input.form-control(type='hidden', name='timestamp', value='1579845807580')
+  //-       input.form-control(type='hidden', name='timestamp_secret', value='c0be2332d8b1817d2fdae71c17398cdc705be02c8295d5392ae08ee7dba6e6ef')
+  //-       input.btn.btn-primary.btn-block(type='submit', name='commit', value='Sign in', tabindex='3', data-disable-with='Signing in…')

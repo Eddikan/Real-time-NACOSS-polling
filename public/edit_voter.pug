@@ -1,0 +1,28 @@
+extends layout
+
+block content
+  h1 #{title}
+  form(method='POST', action='/voters/edit/'+voter._id)
+    #form-group
+      label MatNo:
+      input.form-control(name='matno', type='text', value=voter.matno)
+    #form-group
+      label Name:
+      input.form-control(name='name', type='text', value=voter.name) 
+    //         
+      #form-group
+      label Password:
+      input.form-control(name='pass', type='password') 
+    
+      #form-group
+      label Confirm:
+      input.form-control(name='pass2',type='password')
+    #form-group
+      select(name='donevote')
+        option(value='not voted') Not voted
+          |     
+        option(value='has voted') Has voted
+          |                     
+    br
+    input.btn.btn-primary(type='submit',value='Save')
+      

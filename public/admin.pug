@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  h1 #{title}
+  //li.nav-item
+    
+  ul.list-group
+    a.nav-link(href="/voters/add") Add voter
+    a.nav-link(href="/admins/add") Add admin
+    div.mydiv
+      h5 Existing voters:
+      each voter, i in voters
+        
+        li.list-group-item
+          a(href="/voters/"+voter.id)= voter.name
